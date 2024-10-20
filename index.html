@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+  <title>IMDB Movies Collection</title>
+  <link href="index.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="bd-highlight mb-3">
+      <nav class="navbar navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand archivo-black-regular">NoSQL-based IMDB Movie Database</a>
+          <div class="group">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" onclick="loadQueryTable();return false;">
+              <g>
+                <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+              </g>
+            </svg>
+            <input id="searchTextBox" placeholder="Search" type="search" class="input">
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="card">
+      <div class="loader">
+        <p>Movies</p>
+        <div class="words">
+          <span class="word">Series</span>
+          <span class="word">IMDB</span>
+          <span class="word">Year</span>
+          <span class="word">Genre</span>
+          <span class="word">Meta</span>
+          <span class="word">Director</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex bd-highlight mb-3">
+      <div class="p-2 w-50 bd-highlight">
+        <div id="piechartGenres" style="width: 100%; height: 400px;"></div>
+      </div>
+      <div class="p-2 w-50 bd-highlight">
+        <div id="barchartGenres" style="width: 100%; height: 400px;"></div>
+      </div>
+    </div>
+
+    <div class="d-flex bd-highlight mb-3 align-items-center">
+      <div class="me-auto p-2 bd-highlight">
+        <h2>IMDB Movies Information</h2>
+      </div>
+      <button type="button" class="btn-create" onclick="showMovieCreateBox()">
+        <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-width="2" stroke="#ffffff"
+            d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
+            stroke-linejoin="round" stroke-linecap="round"></path>
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff"
+            d="M17 15V18M17 21V18M17 18H14M17 18H20"></path>
+        </svg>
+        Create
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-condensed table-light table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Released Year</th>
+            <th scope="col">Genre</th>
+            <th scope="col">IMDB Rating</th>
+            <th scope="col">Meta Score</th>
+            <th scope="col">Director</th>
+          </tr>
+        </thead>
+        <tbody id="mytable">
+          <tr>
+            <th scope="row" colspan="7">Loading...</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer class="bg-body-tertiary text-center">
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+        <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;"
+          href="https://www.facebook.com/profile.php?id=100010694024098" role="button" target="_blank"><i
+            class="fab fa-facebook-f"></i></a>
+        <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!"
+          role="button"><i class="fab fa-twitter"></i></a>
+        <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!"
+          role="button"><i class="fab fa-google"></i></a>
+        <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!"
+          role="button"><i class="fab fa-instagram"></i></a>
+        <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#!"
+          role="button"><i class="fab fa-linkedin-in"></i></a>
+        <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #333333;" href="#!"
+          role="button"><i class="fab fa-github"></i></a>
+      </section>
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright
+      <a class="text-body"></a>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

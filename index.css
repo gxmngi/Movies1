@@ -1,0 +1,458 @@
+/* ปรับสีของ navbar ให้ดู minimal */
+.navbar {
+  background-color: #d8cfc4;
+  /* สีเบจอ่อนสำหรับ navbar */
+  border-bottom: 1px solid #ddd;
+  /* เส้นขอบด้านล่างสีเทาอ่อน */
+  border-radius: 0.5rem;
+  /* เพิ่มความโค้งของมุม */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  /* จัดให้อยู่ระหว่างขอบซ้ายและขวา */
+  align-items: center;
+  /* จัดให้เนื้อหาอยู่กลางแนวตั้ง */
+}
+
+
+
+.navbar-brand {
+  color: #333;
+  /* สีตัวอักษรของ navbar */
+  font-weight: 500;
+  /* เพิ่มน้ำหนักตัวอักษร */
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  /* สีของลิงก์ใน navbar */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000;
+  /* สีของลิงก์เมื่อ hover */
+}
+
+/* ปรับสีของช่องค้นหา */
+.form-control {
+  border: 1px solid #ddd;
+  /* ขอบสีเทาอ่อน */
+  border-radius: 0.25rem;
+  /* ความโค้งของขอบ */
+  background-color: #ffffff;
+  /* พื้นหลังสีขาว */
+  box-shadow: none;
+  /* ไม่มีเงา */
+  padding: 0.5rem 0.75rem;
+  /* เพิ่ม padding เพื่อความเรียบง่าย */
+}
+
+.form-control::placeholder {
+  color: #aaa;
+  /* สีของ placeholder */
+}
+
+/* ปรับสีของปุ่มค้นหา */
+.btn-outline-success {
+  color: #333;
+  /* สีตัวอักษร */
+  border-color: #ddd;
+  /* สีขอบ */
+  background-color: #f5f5f5;
+  /* สีพื้นหลังของปุ่ม */
+}
+
+.btn-outline-success:hover {
+  color: #000;
+  /* สีตัวอักษรเมื่อ hover */
+  border-color: #bbb;
+  /* สีขอบเมื่อ hover */
+  background-color: #e0e0e0;
+  /* สีพื้นหลังของปุ่มเมื่อ hover */
+}
+
+.btn-outline-success:focus,
+.btn-outline-success:active {
+  box-shadow: none;
+  /* ไม่มีเงาเมื่อ focus หรือ active */
+}
+
+
+body {
+  font-size: 1.25rem;
+  background-color: #f6f8fa;
+}
+
+td {
+  line-height: 3rem;
+}
+
+.table-condensed {
+  font-size: 16px;
+}
+
+/* From Uiverse.io by SpatexDEV */
+.btn-create {
+  padding: 0.75rem 1.5rem;
+  /* เพิ่มขนาด padding */
+  background-color: #8B7E66;
+  color: #ffffff;
+  font-size: 0.85rem;
+  /* เพิ่มขนาดตัวอักษร */
+  line-height: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  /* เพิ่มความโค้งของปุ่ม */
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  /* เพิ่มช่องว่างระหว่างไอคอนกับข้อความ */
+  cursor: pointer;
+  box-shadow:
+    0 5px 8px -1px #488aec31,
+    0 3px 6px -1px #488aec17;
+  transition: all 0.6s ease;
+}
+
+.btn-create svg {
+  width: 1rem;
+  /* เพิ่มขนาดไอคอน */
+  height: 1rem;
+}
+
+.btn-create:hover {
+  box-shadow:
+    0 10px 15px -3px #488aec4f,
+    0 5px 8px -2px #488aec17;
+}
+
+.btn-create:focus,
+.btn-create:active {
+  opacity: 0.85;
+  box-shadow: none;
+}
+
+/* From Uiverse.io by aaronross1 */
+.edit-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(51, 51, 51);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+}
+
+.edit-svgIcon {
+  width: 17px;
+  transition-duration: 0.3s;
+}
+
+.edit-svgIcon path {
+  fill: white;
+}
+
+.edit-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.edit-button:hover .edit-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.edit-button::before {
+  display: none;
+  content: "Edit";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.edit-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
+
+
+/* From Uiverse.io by aaronross1 */
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(222, 49, 99);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.delete-button::before {
+  display: none;
+  content: "Delete";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.delete-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
+
+.table-responsive {
+  overflow-x: auto;
+  /* ช่วยให้ตารางมีการเลื่อนในแนวนอนเมื่อมีขนาดกว้างเกิน */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  /* ทำให้เส้นขอบติดกัน */
+}
+
+.table th {
+  text-align: center;
+  /* จัดกึ่งกลางในแนวนอนสำหรับหัวตาราง */
+  vertical-align: middle;
+  /* จัดกึ่งกลางในแนวตั้งสำหรับหัวตาราง */
+  background-color: #f8f9fa;
+  /* สีพื้นหลังของหัวตาราง */
+  border-bottom: 2px solid #dee2e6;
+  /* เส้นขอบด้านล่างของหัวตาราง */
+}
+
+.table td {
+  text-align: left;
+  /* จัดชิดซ้ายสำหรับข้อมูลในตาราง */
+  vertical-align: middle;
+  /* จัดกึ่งกลางในแนวตั้ง */
+  padding: 8px;
+  /* ระยะห่างภายในเซลล์ */
+}
+
+.table td.numeric {
+  text-align: center !important;
+  /* จัดกึ่งกลางในแนวนอนสำหรับข้อมูลที่เป็นตัวเลข โดยใช้ !important เพื่อ override การจัดการอื่น */
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+  /* เส้นขอบของเซลล์ */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+  /* สีพื้นหลังของแถวเมื่อ hover */
+}
+
+.table-condensed th,
+.table-condensed td {
+  padding: 4px;
+  /* ลดระยะห่างภายในเซลล์สำหรับตารางที่มีขนาดเล็ก */
+}
+
+/* From Uiverse.io by kennyotsu */
+.card {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+}
+
+.loader {
+  color: rgb(124, 124, 124);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  border-radius: 8px;
+}
+
+.words {
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+  /* ความสูงของ container สำหรับแต่ละข้อความ */
+}
+
+.words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--bg-color) 10%,
+      transparent 30%,
+      transparent 70%,
+      var(--bg-color) 90%);
+  z-index: 20;
+}
+
+.word {
+  display: block;
+  height: 100%;
+  /* ให้ข้อความมีความสูงเต็ม */
+  color: #956afa;
+  animation: spin_4991 6s infinite;
+  /* ปรับเวลาให้หมุนครบ */
+  padding-left: 6px;
+}
+
+@keyframes spin_4991 {
+  0% {
+    transform: translateY(0);
+  }
+
+  16.66% {
+    transform: translateY(-100%);
+  }
+
+  33.33% {
+    transform: translateY(-200%);
+  }
+
+  50% {
+    transform: translateY(-300%);
+  }
+
+  66.66% {
+    transform: translateY(-400%);
+  }
+
+  83.33% {
+    transform: translateY(-500%);
+  }
+
+  100% {
+    transform: translateY(-600%);
+  }
+}
+
+/* ปรับแต่งปุ่ม Search ใหม่ */
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 300px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: .3s ease;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+.input:hover {
+  outline: none;
+  border-color: rgba(234, 76, 137, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  /* เพิ่มให้แสดง cursor pointer เมื่อ hover */
+}
+
+.icon:hover {
+  fill: #ea4c89;
+  /* เปลี่ยนสีเมื่อ hover */
+}
+
+
+
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
